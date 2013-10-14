@@ -1,0 +1,26 @@
+DynamicIntigration/DestinyServerCrew/ GVPN.Admin.Sys.
+=
+
+Source=http://www.paessler.com/blog/2013/10/11/prtg/introducing-the-new-high-performance-syslog-and-snmp-trap-receiver-sensors
+Ess.Intigration/Moniter OpeSystems/  
+
+
+Filtering Incoming Messages: Avoiding Useless Information
+
+In the sensor settings, you can define which messages PRTG will process. The more specific you are on which messages you're interested in, the better PRTG can provide interesting data and purge other data right away. However, if you decide to keep most of the incoming messages, all you need is a large hard drive, and PRTG will help you with filters to explore historic data later on. For the purpose of filtering, PRTG provides you two fields:
+
+In the "Include" field, enter a filter for messages you want to monitor. Only messages which match this filter will be processed and stored. You can choose all incoming messages with "any" or by leaving this field empty.
+In the "Exclude" field, enter a filter for messages you do not want to monitor. Messages matching this filter will be discarded.
+Two other filter fields are available to define which messages will count for the "warning" or "error" channel. By default, both channels have a very low warning respectively error limit (0.00000001). The idea behind this is that the sensor will immediately go into the corresponding status as soon as "bad news" comes in. Of course, you can set your own limit as desired—as is usual with PRTG.
+
+For example, in order to receive, an email if there are warning or error system messages, you can add a notification trigger to the sensor. Triggers of choice would be a certain status—notifying you when the sensor is down or warning—or speed, notifying you, for example, when there are ten error messages per second.
+
+Filter Rules
+
+You are free to use various filters to suit your needs though we recommend running the Syslog or Trap receiver with default filter settings first. Once you've run the sensor for a little while, take a look at the results and adjust the filters to fit your needs. In the sensor settings, you can use formulas to define your filters. You can also link conditions in a respective filter field with Boolean operators (and, or, not) and parentheses.
+
+Below, we list available filter options with possible parameters and the corresponding syntax for the syslog receiver. But don't be afraid if it looks a bit complicated to you, PRTG wouldn't be PRTG if there wouldn't be an easy way to use it: When our new Syslog and Trap receivers are ready to leave our lab, you will be able to create these rules with a few mouse clicks via a filter creator in the messages overview.
+
+Available Filters and Syntax for Filter Fields in Sensor Settings
+
+Examples for Filter Rules
